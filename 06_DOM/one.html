@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM learning</title>
+    <style>
+        .bg-balck{
+            background-color: #212121;
+            color: white;
+        }
+        #title{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body  class="bg-balck">
+    <div>
+        <h1 id="title" class="heading">DOM learning from YouTube</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+
+    <ul class="lang">
+        <li>JavaScript</li>
+    </ul>
+
+    <script>
+        function colorchange(){
+            document.getElementById("title").style.color = "red"
+        }
+        document.getElementById("title").addEventListener("click", colorchange);
+
+        function addLang(langName){
+          const element =  document.createElement('li');
+            element.innerHTML = `${langName}`;
+            document.querySelector(".lang").appendChild(element);
+        }
+addLang("Python");
+
+function addOptiLang(langName){
+    const element =  document.createElement('li');
+    element.appendChild(document.createTextNode(langName));
+    document.querySelector(".lang").appendChild(element)
+}
+addOptiLang("hello");
+
+// Edit
+
+const second = document.querySelector('li:nth-child(3)');
+const newli = document.createElement('li');
+newli.textContent = "mojo";
+second.replaceWith(newli);
+
+
+
+
+    </script>
+</body>
+</html>
